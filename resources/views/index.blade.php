@@ -7,7 +7,7 @@
                 <h1 class="text-white text-4xl uppercase font-bold text-shadow-md pb-80">
                     Where will you go next?
                 </h1>
-                <a href="/candidates" class="text-center py-2 px-4 text-xl bg-gray-600 uppercase text-s text-white font-extrabold rounded-3xl hover:bg-green-500">
+                <a href="/candidates/create" class="text-center py-2 px-4 text-xl bg-gray-600 uppercase text-s text-white font-extrabold rounded-3xl hover:bg-green-500">
                     Get Started
                 </a>
             </div>
@@ -15,26 +15,26 @@
     </div>
     <div class="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
         <div class="sm:grid grid-cols-2 gap-20 w-25 mx-auto py-15">
-            <div>
-                <img src="https://cdn.pixabay.com/photo/2016/11/29/01/36/cloudy-1866581_1280.jpg"  width="700px" alt="">
+            <div class="px-12">
+                <img src="https://cdn.pixabay.com/photo/2016/11/29/01/36/cloudy-1866581_1280.jpg"  width="600px" alt="">
             </div>
             <div class="m-auto sm:m-auto text-left w-4/5 block">
                 <h2 class="text-3xl font-extrabold text-white">
-                    Some title here?
+                    See how you compare
                 </h2>
-                <p class="py-8 text-white text-s">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis veniam aperiam fuga recusandae quis tempora accusantium corporis? Consequatur deserunt deleniti, alias expedita dicta quod obcaecati, beatae facilis sequi dolor cum.
+                <p class="py-8 text-black font-extrabold text-s">
+                    Wondering how you stack up against fellow drivers? DriverFind has an open-door policy and believes in fostering a fair, tight-knight community of drivers. 
                 </p>
 
-                <p class="font-extrabold text-s pb-9">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae voluptas ab molestias delectus facilis accusamus labore omnis tenetur nobis esse veniam et suscipit ex aperiam nisi.
+                <p class="text-s pb-9 text-white">
+                    All applicants submitting applications have consented to sharing their information.
                 </p>
 
-                <a href="/candidates" class="bg-gray-600 uppercase text-s text-white font-extrabold py-3 px-8 rounded-3xl hover:bg-green-500">Submit your application</a>
+                <a href="/candidates" class="bg-gray-600 uppercase text-s text-white font-extrabold py-3 px-8 rounded-3xl hover:bg-green-500">See other applicants</a>
             </div>
         </div>
     </div>
-    <div class="bg-gradient-to-r from-cool-gray-100 to-cool-gray-300 text-center p-15 text-white">
+    <div class="bg-gradient-to-r from-cool-gray-100 to-cool-gray-300 text-center p-15 text-white leading-7">
         <h2 class="text-4xl pb-5 text-l font-extrabold text-black">
             Curious about benefits?
         </h2>
@@ -53,13 +53,13 @@
     </div>
     <div class="text-center py-15">
         <span class="uppercase text-s">
-            Candidates
+            Jane Doe
         </span>
         <h2 class="text-4xl font-bold py-10">
-            Recent Applicants
+            Success Story
         </h2>
-        <p class="m-auto w-4/5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos doloremque impedit quia praesentium, cum labore quod dignissimos error unde asperiores in architecto hic tenetur ducimus mollitia a, sapiente vitae voluptatem?
+        <p class="m-auto w-2/5 leading-8">
+            "Using DriverFind I've been able to really understand what skills employers are looking for, as well as learn how to prepare a resume to better speak on my unique talents. I also love how easy it is for DriverFind recruiters to get in touch with me and review my profile!"
         </p>
     </div>
     <div class="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">

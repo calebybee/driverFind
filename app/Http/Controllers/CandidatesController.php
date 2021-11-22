@@ -36,7 +36,36 @@ class CandidatesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'salary' => 'required',
+            'startdate' => 'required',
+            'resume' => 'required|mimes:pdf,doc,docx|max:5048',
+            'aboutme' => 'required|max:3000'
+        ]);
+
+        $newResumeName = uniqid() . '-' . $request->name . '.' . $request->resume->extension();
+
+        $request->resume->move(public_path('resumes'), $newResumeName);
+
+        Candidate::create([
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'resume_path' => $newResumeName,
+            'salary' => $request->input('salary'),
+            'city' => $request->input('city'),
+            'state' => $request->input('state'),
+            'startdate' => $request->input('startdate'),
+            'aboutme' => $request->input('aboutme'),
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect('/candidates')->with('message', 'Your application has been received!');
     }
 
     /**
@@ -47,7 +76,8 @@ class CandidatesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('candidates.show')
+            ->with('candidate', Candidate::where('id', $id)->first());
     }
 
     /**
@@ -58,7 +88,8 @@ class CandidatesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('candidates.edit')
+            ->with('candidate', Candidate::where('id', $id)->first());
     }
 
     /**
@@ -70,7 +101,19 @@ class CandidatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Candidate::where('id', $id)
+            ->update([
+                'name' => $request->input('name'),
+                'phone' => $request->input('phone'),
+                'email' => $request->input('email'),
+                'resume_path' => $newResumeName,
+                'salary' => $request->input('salary'),
+                'city' => $request->input('city'),
+                'state' => $request->input('state'),
+                'startdate' => $request->input('startdate'),
+                'aboutme' => $request->input('aboutme'),
+                'user_id' => auth()->user()->id
+            ]);
     }
 
     /**

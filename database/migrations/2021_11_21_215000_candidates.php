@@ -25,9 +25,8 @@ class Candidates extends Migration
             $table->string('resume_path');
             $table->timestamps();
             $table->longText('aboutme');
-            $table->string('slug');
-            $table->unsignedBigInteger('userid');
-            $table->foreign('userid')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

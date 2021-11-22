@@ -25,7 +25,7 @@
     @foreach ($candidates as $candidate)
         <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15">
             <div>
-                <img src="https://cdn.pixabay.com/photo/2016/11/29/01/36/cloudy-1866581_1280.jpg"  width="700px" alt="">
+                <img src="{{ asset('resume/' . $candidate->resume_path) }}"  width="700px" alt="">
             </div>
             <div>
                 <h2 class="font-bold text-4xl pb-4">

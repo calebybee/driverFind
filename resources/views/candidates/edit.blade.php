@@ -111,9 +111,14 @@
                 </div>
                 <div class="md:w-2/3">
                     <input class="appearance-none rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-resume" name="resume" type="file">
-                  </div>
+                </div>
             </div>
             <div class="md:flex md:items-center">
+              <div class="md:w-1/3"></div>
+              <span class="italic text-gray-400 text-xs">Privacy Notice: By submitting your application, you consent to the sharing of any data provided.</span>
+              </div>
+            </div>
+            <div class="md:flex md:items-center pb-10">
               <div class="md:w-1/3"></div>
                 <button class="shadow bg-blue-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-3xl uppercase text-lg" type="submit">
                   Submit Application

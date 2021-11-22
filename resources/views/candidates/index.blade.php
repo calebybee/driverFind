@@ -60,7 +60,7 @@
                     </span>
                     <span class="float-right">
                         <form 
-                            action="/candidate/{{ $candidate->id }}"
+                            action="/candidates/{{ $candidate->id }}"
                             method="POST">
                             @csrf
                             @method('delete')

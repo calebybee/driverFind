@@ -116,7 +116,7 @@ class CandidatesController extends Controller
             'resume' => 'required|mimes:pdf,doc,docx|max:5048',
             'aboutme' => 'required|max:3000'
         ]);
-        
+
         Candidate::where('id', $id)
             ->update([
                 'name' => $request->input('name'),
@@ -144,6 +144,8 @@ class CandidatesController extends Controller
     {
         $candidate = Candidate::where('id', $id);
         $candidate->delete();
-
+        
+        return redirect('/candidates')
+            ->with('message', 'Your post has been deleted.');
     }
 }

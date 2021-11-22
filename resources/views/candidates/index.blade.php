@@ -25,7 +25,7 @@
     @foreach ($candidates as $candidate)
         <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15">
             <div>
-                <img src="{{ asset('resume/' . $candidate->resume_path) }}"  width="700px" alt="">
+                <embed src="{{ asset('resumes/' . $candidate->resume_path) }}"  type="application/pdf" width="100%" height="600px" toolbar="0" statusbar="0" navpanes="0">
             </div>
             <div>
                 <h2 class="font-bold text-4xl pb-4">

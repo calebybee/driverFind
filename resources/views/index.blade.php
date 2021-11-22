@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-gradient-to-r from-cool-gray-100 to-cool-gray-300 text-center p-15 text-white leading-7">
+    <div class="sm:m-auto bg-gradient-to-r from-cool-gray-100 to-cool-gray-300 text-center p-15 text-white leading-7">
         <h2 class="text-4xl pb-5 text-l font-extrabold text-black">
             Curious about benefits?
         </h2>
@@ -51,7 +51,7 @@
             $5,000 signing bonus
         </span>
     </div>
-    <div class="text-center py-15">
+    <div class="sm:m-auto text-center py-15">
         <span class="uppercase text-s">
             Jane Doe
         </span>

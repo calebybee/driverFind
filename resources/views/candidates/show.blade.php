@@ -8,7 +8,7 @@
             </h1>
         </div>
     </div>
-    <div class="sm:grid grid-cols-2 mx-auto py-15 text-left h-96 leading-7">
+    <div class="sm:grid grid-cols-2 mx-auto py-15 text-left h-screen leading-7">
         <div class="px-1/5">
             <span class="font-bold">
                 Phone: </span><span class="italic text-black">{{ $candidate->phone }}
@@ -33,6 +33,7 @@
             <p class="italic text-black">
                 {{ $candidate->aboutme }}
             </p>
+            <embed class="mb-24" src="{{ asset('resumes/' . $candidate->resume_path) }}"  type="application/pdf" width="100%" height="400px" toolbar="0" statusbar="0" navpanes="0">
         </div>
     </div>
 @endsection

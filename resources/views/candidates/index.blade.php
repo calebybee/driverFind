@@ -23,7 +23,7 @@
         </div>
     @endif
     @foreach ($candidates as $candidate)
-        <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15">
+        <div class="sm:grid sm:m-auto grid-cols-2 gap-20 w-4/5 mx-auto py-15">
             <div>
                 <embed src="{{ asset('resumes/' . $candidate->resume_path) }}"  type="application/pdf" width="100%" height="600px" toolbar="0" statusbar="0" navpanes="0">
             </div>
@@ -48,8 +48,8 @@
                     {{ $candidate->aboutme }}
                 </p>
 
-                <a href="/candidates/{{ $candidate->id }}" class="uppercase text-white font-extrabold py-4 px-8 rounded-3xl bg-blue-500 hover:bg-blue-200 hover:text-black">
-                    Explore {{ $candidate->name }}'s application
+                <a href="/candidates/{{ $candidate->id }}" class="sm:m-auto sm:py-1 sm:px-2 sm:rounded-2xl sm:font-bold uppercase text-white font-extrabold py-4 px-8 rounded-3xl bg-blue-500 hover:bg-blue-200 hover:text-black">
+                    Explore application
                 </a>
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $candidate->user_id)

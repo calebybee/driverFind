@@ -48,15 +48,26 @@
                     {{ $candidate->aboutme }}
                 </p>
 
-                <a href="/candidates/{{ $candidate->id }}" class="sm:m-auto sm:py-1 sm:px-2 sm:rounded-2xl sm:font-bold uppercase text-white font-extrabold py-4 px-8 rounded-3xl bg-blue-500 hover:bg-blue-200 hover:text-black">
+                <a href="/candidates/{{ $candidate->id }}" class="sm:m-auto sm:py-1 sm:px-2 sm:rounded-2xl sm:font-bold md:font-extrabold uppercase text-white font-extrabold py-4 px-8 rounded-3xl bg-blue-500 hover:bg-blue-200 hover:text-black">
                     Explore application
                 </a>
 
                 @if (isset(Auth::user()->id) && Auth::user()->id == $candidate->user_id)
                     <span class="float-right">
-                        <a class="bg-gray-200 hover:bg-yellow-200 text-black rounded-3xl py-2 px-4" href="/candidates/{{ $candidate->id }}/edit">
+                        <a class="bg-gray-200 hover:bg-gray-400 text-black rounded-3xl py-2 px-4" href="/candidates/{{ $candidate->id }}/edit">
                             Edit
                         </a>
+                    </span>
+                    <span class="float-right">
+                        <form 
+                            action="/candidate/{{ $candidate->id }}"
+                            method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="text-red-500 pr-3 hover:font-extrabold" type="submit">
+                                Delete
+                            </button>
+                        </form>
                     </span>
                 @endif
             </div>

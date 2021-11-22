@@ -7,6 +7,10 @@ use App\Models\Candidate;
 
 class CandidatesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -101,6 +105,18 @@ class CandidatesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'salary' => 'required',
+            'startdate' => 'required',
+            'resume' => 'required|mimes:pdf,doc,docx|max:5048',
+            'aboutme' => 'required|max:3000'
+        ]);
+        
         Candidate::where('id', $id)
             ->update([
                 'name' => $request->input('name'),
@@ -114,6 +130,8 @@ class CandidatesController extends Controller
                 'aboutme' => $request->input('aboutme'),
                 'user_id' => auth()->user()->id
             ]);
+        return redirect('/candidates')
+            ->with('message', 'Your application has been updated!');
     }
 
     /**
@@ -124,6 +142,8 @@ class CandidatesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidate = Candidate::where('id', $id);
+        $candidate->delete();
+
     }
 }

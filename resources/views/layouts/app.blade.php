@@ -21,7 +21,7 @@
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-white no-underline">
-                        {{ config('app.name', 'DriverFind') }}
+                        DriverFind
                     </a>
                 </div>
                 <nav class="space-x-4 text-white text-sm sm:text-base">

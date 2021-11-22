@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Candidate;
 
 class CandidatesController extends Controller
 {
@@ -13,7 +14,8 @@ class CandidatesController extends Controller
      */
     public function index()
     {
-        return view('candidates.index');
+        return view('candidates.index')
+            ->with('candidates', Candidate::orderBy('updated_at', 'DESC')->get());
     }
 
     /**
@@ -23,7 +25,7 @@ class CandidatesController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidates.create');
     }
 
     /**
